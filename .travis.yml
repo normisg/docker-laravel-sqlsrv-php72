@@ -1,0 +1,9 @@
+services:
+  - docker
+
+install:
+  - docker build -t docker-laravel-sqlsrv-php72 .
+  - docker run -d -p 127.0.0.1:80:80 --name docker-laravel-sqlsrv-php72 docker-laravel-sqlsrv-php72
+
+script:
+  - docker ps | grep -q docker-laravel-sqlsrv-php72
